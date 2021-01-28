@@ -1,0 +1,166 @@
+@media (pointer:fine) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    p, a {
+        text-align: center;
+        font-family: 'Source Sans Pro', sans-serif;
+        white-space: nowrap;
+    }
+
+    a {
+        color: rgba(60, 185, 255, 1);
+        text-shadow: 0px 0px 1px rgba(60, 185, 255, 1);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+    #circle_text {
+        font-size: 60px;
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -300px);
+        color: rgb(20, 20, 20);
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    }
+
+
+    #text {
+        font-size: 100px;
+        font-weight: 400;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(0, 255, 128, 1);
+        text-shadow: 0px 0px 2px rgba(0, 255, 128, 1);
+        animation: zoom 1s ease-in 0s 1 normal;
+    }
+
+    .circle {
+        width: 400px;
+        height: 400px;
+        fill: rgba(0, 255, 128, 1);
+        filter: drop-shadow(0px 0px 15px rgba(0, 255, 128, 0.7));
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        animation: zoom 1s ease-in 0s 1 normal;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(5) translate(-8%, 0);
+        }
+        to {
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+
+
+    #final_text {
+        font-size: 40px;
+        font-weight: 400;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 220px);
+        color: rgb(20, 20, 20);
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    }
+}
+
+@media (pointer:coarse) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    p, a {
+        text-align: center;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    a {
+        color: rgba(60, 185, 255, 1);
+        text-shadow: 0px 0px 1px rgba(60, 185, 255, 1);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+
+    #circle_text {
+        font-size: 40px;
+        font-weight: 600;
+        position: absolute;
+        top: 170px;
+        left: 50%;
+        transform: translate(-50%, -150px);
+        color: rgb(20, 20, 20);
+        text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    }
+
+
+    #text {
+        font-size: 80px;
+        font-weight: 400;
+        position: absolute;
+        top: 170px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(0, 255, 128, 1);
+        text-shadow: 0px 0px 2px rgba(0, 255, 128, 1);
+        animation: zoom 1s ease-in 0s 1 normal;
+    }
+
+    .circle {
+        width: 700px;
+        height: 700px;
+        fill: rgba(0, 255, 128, 1);
+        filter: drop-shadow(0px 0px 15px rgba(0, 255, 128, 0.7));
+        position: absolute;
+        top: 0;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        animation: zoom 1s ease-in 0s 1 normal;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(5) translate(-8%, 0);
+        }
+        to {
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+
+
+    #final_text {
+        font-size: 30px;
+        font-weight: 400;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30px);
+        color: rgb(20, 20, 20);
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    }
+}

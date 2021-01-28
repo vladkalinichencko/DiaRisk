@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div id="circle_div">
+        <p id="first">{{ questions.question }}</p>
+        <p id="second">{{ questions.text_of_question }}</p>
+        <svg class="circle" viewBox="0 0 540 540" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_i)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M270 540C419.117 540 540 419.117 540 270C540 120.883 419.117 0 270 0C120.883 0 0 120.883 0 270C0 419.117 120.883 540 270 540ZM270 473.425C382.348 473.425 473.425 382.348 473.425 270C473.425 157.652 382.348 66.5753 270 66.5753C157.652 66.5753 66.5753 157.652 66.5753 270C66.5753 382.348 157.652 473.425 270 473.425Z"/>
+            </g>
+            <defs>
+            <filter id="filter0_i" x="0" y="0" width="540" height="540" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset/>
+            <feGaussianBlur stdDeviation="20"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.729412 0 0 0 0 0.717647 0 0 0 0 0.717647 0 0 0 0.5 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+            </filter>
+            </defs>
+        </svg>
+    </div>
+    {% if questions.id == questions_database|length %}
+    <form method="POST" action="result/">
+    {% else %}
+    <form method="POST" action="{{ questions.id + 1 }}">
+    {% endif %}
+        <input type="radio" name="petal_radio" id="bottom_left_radio" value="{{ questions.value_1 }}">
+        <label for="bottom_left_radio" id="bottom_left_label">
+            <div class="petal_div" id="bottom_left_petal_div">
+                <p>{{ questions.answer_1 }}</p>
+            </div>
+            <svg class="petal" id="bottom_left" viewBox="0 0 451 327" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_i)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M442.667 251.836C438.527 275.272 432.781 297.754 425.671 317.062C423.225 323.706 416.236 327.375 409.288 326.016L12.8258 248.47C3.98964 246.742 -1.31814 237.672 0.800909 228.922C5.69581 208.708 8.31092 186.301 8.31092 163.346C8.31092 141.034 5.84003 119.239 1.2062 99.4721C-0.831059 90.7818 4.44503 81.826 13.1991 80.083L409.255 1.22536C416.217 -0.160807 423.234 3.50814 425.716 10.1589C432.804 29.1596 438.536 50.7691 442.667 74.1564C447.642 102.322 450.203 132.51 450.203 162.996C450.203 193.483 447.642 223.671 442.667 251.836Z"/>
+                </g>
+                <defs>
+                <filter id="filter0_i" x="0.335449" y="0.934692" width="449.867" height="325.362" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="25"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.729167 0 0 0 0 0.717014 0 0 0 0 0.717014 0 0 0 0.3 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                </filter>
+                </defs>
+            </svg>
+        </label>
+        <input type="radio" name="petal_radio" id="top_left_radio" value="{{ questions.value_2 }}">
+        <label for="top_left_radio" id="top_left_label">
+            <div class="petal_div" id="top_left_petal_div">
+                <p>{{ questions.answer_2 }}</p>
+            </div>
+            <svg class="petal" id="top_left" viewBox="0 0 451 327" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_i)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M442.667 251.836C438.527 275.272 432.781 297.754 425.671 317.062C423.225 323.706 416.236 327.375 409.288 326.016L12.8258 248.47C3.98964 246.742 -1.31814 237.672 0.800909 228.922C5.69581 208.708 8.31092 186.301 8.31092 163.346C8.31092 141.034 5.84003 119.239 1.2062 99.4721C-0.831059 90.7818 4.44503 81.826 13.1991 80.083L409.255 1.22536C416.217 -0.160807 423.234 3.50814 425.716 10.1589C432.804 29.1596 438.536 50.7691 442.667 74.1564C447.642 102.322 450.203 132.51 450.203 162.996C450.203 193.483 447.642 223.671 442.667 251.836Z"/>
+                </g>
+                <defs>
+                <filter id="filter0_i" x="0.335449" y="0.934692" width="449.867" height="325.362" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="25"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.729167 0 0 0 0 0.717014 0 0 0 0 0.717014 0 0 0 0.3 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                </filter>
+                </defs>
+            </svg>
+        </label>
+        <input type="radio" name="petal_radio" id="top_right_radio" value="{{ questions.value_3 }}">
+        <label for="top_right_radio" id="top_right_label">
+            <div class="petal_div" id="top_right_petal_div">
+                <p>{{ questions.answer_3 }}</p>
+            </div>
+            <svg class="petal" id="top_right" viewBox="0 0 451 327" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_i)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M442.667 251.836C438.527 275.272 432.781 297.754 425.671 317.062C423.225 323.706 416.236 327.375 409.288 326.016L12.8258 248.47C3.98964 246.742 -1.31814 237.672 0.800909 228.922C5.69581 208.708 8.31092 186.301 8.31092 163.346C8.31092 141.034 5.84003 119.239 1.2062 99.4721C-0.831059 90.7818 4.44503 81.826 13.1991 80.083L409.255 1.22536C416.217 -0.160807 423.234 3.50814 425.716 10.1589C432.804 29.1596 438.536 50.7691 442.667 74.1564C447.642 102.322 450.203 132.51 450.203 162.996C450.203 193.483 447.642 223.671 442.667 251.836Z"/>
+                </g>
+                <defs>
+                <filter id="filter0_i" x="0.335449" y="0.934692" width="449.867" height="325.362" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="25"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.729167 0 0 0 0 0.717014 0 0 0 0 0.717014 0 0 0 0.3 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                </filter>
+                </defs>
+            </svg>
+        </label>
+        <input type="radio" name="petal_radio" id="bottom_right_radio" value="{{ questions.value_4 }}">
+        <label for="bottom_right_radio" id="bottom_right_label">
+            <div class="petal_div" id="bottom_right_petal_div">
+                <p>{{ questions.answer_4 }}</p>
+            </div>
+            <svg class="petal" id="bottom_right" viewBox="0 0 451 327" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_i)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M442.667 251.836C438.527 275.272 432.781 297.754 425.671 317.062C423.225 323.706 416.236 327.375 409.288 326.016L12.8258 248.47C3.98964 246.742 -1.31814 237.672 0.800909 228.922C5.69581 208.708 8.31092 186.301 8.31092 163.346C8.31092 141.034 5.84003 119.239 1.2062 99.4721C-0.831059 90.7818 4.44503 81.826 13.1991 80.083L409.255 1.22536C416.217 -0.160807 423.234 3.50814 425.716 10.1589C432.804 29.1596 438.536 50.7691 442.667 74.1564C447.642 102.322 450.203 132.51 450.203 162.996C450.203 193.483 447.642 223.671 442.667 251.836Z"/>
+                </g>
+                <defs>
+                <filter id="filter0_i" x="0.335449" y="0.934692" width="449.867" height="325.362" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="25"/>
+                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.729167 0 0 0 0 0.717014 0 0 0 0 0.717014 0 0 0 0.3 0"/>
+                <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+                </filter>
+                </defs>
+            </svg>
+        </label>
+{% endblock %}
