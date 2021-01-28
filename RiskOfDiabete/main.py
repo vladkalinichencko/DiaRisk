@@ -35,7 +35,7 @@ database.session.add(question_1)
 length_list += 1
 
 question_2 = Questions(question='Какой индекс массы вашего тела?',
-                       text_of_question='Чтобы найти индекс массы, нужно разделить ваш вес на рост.', answer_1='До 25',
+                       text_of_question='Чтобы найти индекс массы, нужно разделить ваш вес на рост, возведённый в квадрат.', answer_1='До 25',
                        value_1=0, answer_2='25 - 30', value_2=1, answer_3='От 30', value_3=2, answer_4='', value_4=-1,
                        value=None)
 database.session.add(question_2)
