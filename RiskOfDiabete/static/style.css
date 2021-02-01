@@ -14,7 +14,7 @@
   }
 
   p {
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     vertical-align: middle;
     font-family: 'Source Sans Pro', sans-serif;
@@ -351,6 +351,7 @@
   }
 
   #big_left_arrow_div p {
+    font-size: 30px;
     font-weight: 600;
     background-color: #000000;
     color: transparent;
@@ -372,6 +373,7 @@
   }
 
   #big_right_arrow_div p {
+    font-size: 30px;
     font-weight: 600;
     background-color: #000000;
     color: transparent;
@@ -413,7 +415,7 @@
 
   #left_hover {
     visibility: hidden;
-    transform: translate(100px, 0) rotate(180deg);
+    transform: translate(0, 0) rotate(180deg);
     opacity: 0;
     transition: opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s;
   }
@@ -427,7 +429,6 @@
   .left_arrow:hover ~ #left_hover {
     visibility: visible;
     opacity: 1;
-    transform: translate(0, 0) rotate(180deg);
   }
 
   .left_arrow:hover ~ #big_left_arrow_div {
@@ -437,7 +438,7 @@
 
   #right_hover {
     visibility: hidden;
-    transform: translate(-100px, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg);
     opacity: 0;
     transition: opacity 0.2s ease-out 0s, transform 0.2s ease-out 0s;
   }
@@ -451,7 +452,6 @@
   .right_arrow:hover ~ #right_hover {
     visibility: visible;
     opacity: 1;
-    transform: translate(0, 0) rotate(0deg);
   }
 
   .right_arrow:hover ~ #big_right_arrow_div {
@@ -491,7 +491,7 @@
   }
 
   p {
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
     vertical-align: middle;
     font-family: 'Source Sans Pro', sans-serif;
@@ -666,6 +666,7 @@
     transform: rotate(180deg);
     margin-left: 5vw;
   }
+
 
   .status_tube {
     transition: all 0.2s ease-out 0s;

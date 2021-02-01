@@ -34,39 +34,46 @@ question_1 = Questions(question='Каков ваш возраст?', text_of_que
 database.session.add(question_1)
 length_list += 1
 
-question_2 = Questions(question='Какой индекс массы вашего тела?',
+question_2 = Questions(question='Каков индекс массы вашего тела? (Наведите на круг для подробностей)',
                        text_of_question='Чтобы найти индекс массы, нужно разделить ваш вес на рост, возведённый в квадрат.', answer_1='До 25',
                        value_1=0, answer_2='25 - 30', value_2=1, answer_3='От 30', value_3=2, answer_4='', value_4=-1,
                        value=None)
 database.session.add(question_2)
 length_list += 1
 
-question_3 = Questions(question='Имеются ли у вас аутоиммунные болезни?',
+question_3 = Questions(question='Имеются ли у вас аутоиммунные болезни? (Наведите на круг для подробностей)',
                        text_of_question='Гломерулонефрит, аутоиммунный тиреоидит, гепатит, волчанка и пр.',
                        answer_1='Да', value_1=1, answer_2='', value_2=-1, answer_3='Нет', value_3=0, answer_4='',
                        value_4=-1, value=None)
 database.session.add(question_3)
 length_list += 1
 
-question_4 = Questions(question='Больны ли диабетом ваши родственники?',
+question_4 = Questions(question='Больны ли диабетом ваши родственники? (Наведите на круг для подробностей)',
                        text_of_question='Как правило, сахарный диабет в несколько раз чаще встречается у родственников больных сахарным диабетом.',
                        answer_1='Да, оба родителя', value_1=3, answer_2='Да, один родитель', value_2=2,
                        answer_3='Да, брат или сестра', value_3=1, answer_4='Нет', value_4=0, value=None)
 database.session.add(question_4)
 length_list += 1
 
-question_5 = Questions(question='Есть ли у вас вирусные инфекции?',
-                       text_of_question='Краснуха, вирусный паротит (свинка), ветряная оспа, вирусный гепатит и т.п.',
+question_5 = Questions(question='Были ли у вас вирусные инфекции? (Наведите на круг для подробностей)',
+                       text_of_question='Инфекции, которые разрушают клетки поджелудочной железы, вырабатывающие инсулин: краснуха, вирусный паротит (свинка), ветряная оспа, вирусный гепатит и т.п.',
                        answer_1='Да', value_1=1, answer_2='', value_2=-1, answer_3='Нет', value_3=0, answer_4='',
                        value_4=-1, value=None)
 database.session.add(question_5)
 length_list += 1
 
-question_6 = Questions(question='Испытываете ли вы...',
+question_6 = Questions(question='Испытываете ли вы... (Наведите на круг для подробностей)',
                        text_of_question='учащенные мочеиспускания, повышенную утомляемость, сонливость, тошноту, частое дыхание, зуд кожи?',
                        answer_1='Да, некоторые', value_1=1, answer_2='Да, все', value_2=2, answer_3='Нет', value_3=0,
                        answer_4='', value_4=-1, value=None)
 database.session.add(question_6)
+length_list += 1
+
+question_7 = Questions(question='Ведёте ли вы здоровый образ жизни? (Наведите на круг для подробностей)',
+                       text_of_question='Правильно ли вы питаетесь и занимаетесь ли вы спортом?',
+                       answer_1='Да, частично', value_1=1, answer_2='Да', value_2=2, answer_3='Нет', value_3=0,
+                       answer_4='', value_4=-1, value=None)
+database.session.add(question_7)
 length_list += 1
 
 database.session.commit()
@@ -117,4 +124,4 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
