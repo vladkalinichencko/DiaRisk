@@ -1,7 +1,6 @@
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
 
-file = open('doc.txt', 'w')
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 database = SQLAlchemy(app)
@@ -141,12 +140,15 @@ def question(id):
 
     if request.method == "POST":
         answer = request.form.get('petal_radio')
-        answer = answer.split('|')
-        if answer is not None and answer[0] != '-1':
-            Questions.query.get(id).value = int(answer[0])
-            database.session.commit()
+        if answer is not None:
+            answer = answer.split('|')
+            if answer[0] != '-1':
+                Questions.query.get(id).value = int(answer[0])
+                database.session.commit()
 
-            table[id - 1].append(answer[1])
+                table[id - 1].append(answer[1])
+            else:
+                return make_response('Выберите ответ!')
         else:
             return make_response('Выберите ответ!')
 
@@ -157,21 +159,23 @@ def question(id):
 def result():
     if request.method == "POST":
         answer = request.form.get('petal_radio')
-        answer = answer.split('|')
-        if answer is not None and answer[0] != '-1':
-            Questions.query.get(id_final + 1).value = int(answer[0])
-            database.session.commit()
+        if answer is not None:
+            answer = answer.split('|')
+            if answer[0] != '-1':
+                Questions.query.get(id_final + 1).value = int(answer[0])
+                database.session.commit()
 
-            table[id_final].append(answer[1])
+                table[id_final].append(answer[1])
+            else:
+                return make_response('Выберите ответ!')
         else:
             return make_response('Выберите ответ!')
 
-    for row in table:
-        for item in row:
-            file.write(item)
-        file.write('\n')
-
-    file.close()
+    with open('doc.txt', 'w') as file:
+        for row in table:
+            for item in row:
+                 file.write(item)
+            file.write('\n')
 
     final_percentage = 0
     for cycle_id in range(1, length_list + 1):
@@ -186,4 +190,4 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
